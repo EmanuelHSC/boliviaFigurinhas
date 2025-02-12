@@ -13,15 +13,15 @@ import { Creators as CartActions } from "../store/ducks/cart";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
-function ProductCard({ name = "Default Name", description = "Default Description", image, price = "0.00", id, quantity = 0 }) {
+function ProductCard({ name = "Default Name", description = "Default Description", image, price = "0.00", id, quantity = 0, rarity = "Default Rarity", condition = "Default Condition" }) {
   const dispatch = useDispatch();
   const [openAlert, setOpenAlert] = useState(false);
   const vertical = "bottom";
   const horizontal = "center";
 
-  const handleClickAlert = () => {
-    setOpenAlert(true);
-  };
+  // const handleClickAlert = () => {
+  //   setOpenAlert(true);
+  // };
 
   const handleCloseAlert = (event, reason) => {
     if (reason === "clickaway") {
@@ -31,8 +31,18 @@ function ProductCard({ name = "Default Name", description = "Default Description
   };
 
   const handleAddToCart = () => {
-    dispatch(CartActions.addToCart({ name, description, image, price, id }));
-    handleClickAlert();
+    dispatch(
+      CartActions.addToCart({
+        id,
+        name,
+        description,
+        image,
+        price,
+        quantity,
+        rarity,
+        condition
+      })
+    );
   };
 
   return (
@@ -57,8 +67,11 @@ function ProductCard({ name = "Default Name", description = "Default Description
         <Typography variant="body2" color="text.secondary" sx={{ overflow: "hidden", textOverflow: "ellipsis", display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical" }}>
           {description}
         </Typography>
-        <Typography variant="body1" color="text.primary" sx={{ fontWeight: "bold", textAlign: "right", mt: 2, fontSize: "1.1rem" }}>
-          R${price} — Qtd: {quantity}
+        <Typography variant="body2" color="text.secondary" sx={{ overflow: "hidden", textOverflow: "ellipsis", display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical" }}>
+           Condição: {condition} - {rarity}
+        </Typography>
+        <Typography variant="body1" color="text.primary" sx={{ fontWeight: "bold", textAlign: "center", mt: 2, fontSize: "1.1rem" }}>
+         Valor R${price} | Quantidade: {quantity}
         </Typography>
         <Button variant="contained" sx={{ marginTop: 2, alignSelf: "center", width: "80%", height: 40 }} onClick={handleAddToCart}>
           <ShoppingCartIcon />
@@ -79,6 +92,8 @@ ProductCard.propTypes = {
   image: PropTypes.string,
   price: PropTypes.string,
   quantity: PropTypes.number,
+  rarity: PropTypes.string,
+  condition: PropTypes.string,
 };
 
 export default ProductCard;
