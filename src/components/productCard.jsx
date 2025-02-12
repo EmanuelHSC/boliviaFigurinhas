@@ -19,10 +19,6 @@ function ProductCard({ name = "Default Name", description = "Default Description
   const vertical = "bottom";
   const horizontal = "center";
 
-  // const handleClickAlert = () => {
-  //   setOpenAlert(true);
-  // };
-
   const handleCloseAlert = (event, reason) => {
     if (reason === "clickaway") {
       return;

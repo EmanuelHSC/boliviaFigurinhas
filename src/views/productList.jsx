@@ -47,8 +47,6 @@ function ProductList() {
     setPage(value);
   };
 
-  // function ProductCard({ name = "Default Name", description = "Default Description", image, price = "0.00", id, quantity = 0, rarity = "Default Rarity", condition = "Default Condition" }) {
-
   return (
     <StyledCard>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: 2 }}>
