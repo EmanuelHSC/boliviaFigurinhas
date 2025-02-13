@@ -23,7 +23,6 @@ function ProfileMenu() {
     setAnchorEl(null);
   };
 
-  // Reset Password
   const handleResetPasswordOpen = () => {
     setResetPasswordModalOpen(true);
     handleClose();
