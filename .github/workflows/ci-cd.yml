@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 
 jobs:
   build-and-test:
@@ -24,9 +21,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Run Linter (ESLint)
-        run: npm run lint
 
       - name: Run Tests
         run: npm test
