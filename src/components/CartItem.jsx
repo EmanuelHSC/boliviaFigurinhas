@@ -1,4 +1,3 @@
-import Card from '@mui/material/Card'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import CardContent from '@mui/material/CardContent'
@@ -6,7 +5,6 @@ import CardMedia from '@mui/material/CardMedia'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import Input from '@mui/material/Input';
-import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Creators as CartActions } from '../store/ducks/cart'
 
