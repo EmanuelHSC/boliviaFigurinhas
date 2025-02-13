@@ -57,14 +57,7 @@ function ProductList() {
       <Grid container spacing={2} sx={{ padding: 2 }}>
         {currentItems.map((product) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
-            <ProductCard
-              name={product.name}
-              description={product.description}
-              image={product.image}
-              price={product.price}
-              id={product.id}
-              quantity={product.quantity}
-            />
+            <ProductCard name={product.name} description={product.description} image={product.image} price={product.price.toString()} id={product.id} quantity={product.quantity} rarity={product.rarity} condition={product.condition} />
           </Grid>
         ))}
       </Grid>
@@ -82,6 +75,9 @@ ProductList.propTypes = {
       description: PropTypes.string,
       image: PropTypes.string,
       price: PropTypes.string,
+      quantity: PropTypes.number,
+      rarity: PropTypes.string,
+      condition: PropTypes.string,
     })
   ),
 };

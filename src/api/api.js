@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://127.0.0.1:5000/api/v1",
+  // baseURL: "http://127.0.0.1:5000/api/v1", //LOCAL
+  baseURL: "https://boliviafigurinhasbackend.onrender.com/api/v1", //A VERA
 });
 
 api.interceptors.request.use(
