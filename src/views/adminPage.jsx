@@ -141,7 +141,7 @@ function AdminPanel() {
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>{currentProduct?.id ? "Editar Produto" : "Adicionar Novo Produto"}</DialogTitle>
         <DialogContent>
-          <TextField margin="dense" label="Nome" type="text" fullWidth variant="outlined" name="name" value={currentProduct?.name} onChange={handleChange} />
+          <TextField margin="dense" label="Nome" type="text" fullWidth variant="outlined" name="name" value={currentProduct?.name} onChange={handleChange} inputProps={{ maxLength: 25 }}/>
           <TextField margin="dense" label="Descrição" type="text" fullWidth variant="outlined" name="description" value={currentProduct?.description} onChange={handleChange} inputProps={{ maxLength: 40 }} />
           <TextField margin="dense" label="URL da Imagem" type="text" fullWidth variant="outlined" name="image" value={currentProduct?.image} onChange={handleChange} />
           <TextField margin="dense" label="Preço" type="number" fullWidth variant="outlined" name="price" value={currentProduct?.price} onChange={handleChange} />

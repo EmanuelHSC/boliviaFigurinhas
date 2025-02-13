@@ -12,6 +12,7 @@ import Pagination from "@mui/material/Pagination";
 import { useLocation } from "react-router-dom";
 import api from "../api/api";
 
+
 const StyledCard = styled(Card)({
   height: "calc(100vh - 64px)",
   overflowY: "auto",
@@ -50,8 +51,8 @@ function ProductList() {
   return (
     <StyledCard>
       <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", padding: 2 }}>
-        <Typography variant="h3" component="h2" align="center" fontWeight="bold">
-          Produtos
+        <Typography variant="h3" component="h6" align="center" fontWeight="bold">
+          
         </Typography>
       </Box>
       <Grid container spacing={2} sx={{ padding: 2 }}>

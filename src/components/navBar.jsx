@@ -1,5 +1,6 @@
 // src/components/navBar.jsx
 
+import React from 'react';
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import SearchIcon from "@mui/icons-material/Search";
@@ -11,7 +12,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import IconButton from "@mui/material/IconButton";
 import { Typography } from "@mui/material";
 import ProfileMenu from "./profileMenu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import { useSelector } from "react-redux";
 
@@ -34,13 +35,14 @@ const Search = styled("div")(({ theme }) => ({
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#001000",
+      main: "#1E7F00", 
     },
     text: {
       primary: "#ffffff",
     },
   },
 });
+
 
 const StyledToolbar = styled(Toolbar)({
   minHeight: "50px",
@@ -106,7 +108,7 @@ export default function NavBar() {
       <AppBar position="static" color="primary">
         <StyledToolbar>
           <Link to="/">
-            <IconButton color="inherit" onClick={handleHomeClick}>
+            <IconButton color="#001000" onClick={handleHomeClick}>
               <HomeIcon />
             </IconButton>
           </Link>
@@ -120,10 +122,6 @@ export default function NavBar() {
             <StyledInputBase placeholder="Busque aqui seu produto..." inputProps={{ "aria-label": "search" }} />
           </Search>
           <div>
-            {/* <HoverableIconButton color="inherit" onClick={handleFavoritesClick}>
-              <FavoriteIcon />
-            </HoverableIconButton> */}
-
             <Link to="/carrinho" style={{ textDecoration: "none", color: "inherit" }}>
               <HoverableIconButton color="inherit" onClick={handleCartClick}>
                 <Badge badgeContent={quantityCart ? quantityCart : "0"}>
